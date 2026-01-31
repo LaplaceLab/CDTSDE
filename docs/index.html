@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CDTSDE: Adaptive Domain Shift in Diffusion Models</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="badge">ICLR 2026</p>
+        <h1>Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation</h1>
+        <p class="authors">
+          Zihao Wang · Yuzhou Chen · Shaogang Ren
+        </p>
+        <div class="links">
+          <a class="btn" href="https://openreview.net/forum?id=it0GTdiW9t" target="_blank" rel="noreferrer">Paper</a>
+          <a class="btn secondary" href="../README.md">Code</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>Abstract</h2>
+        <p>
+          Cross-modal image translation is brittle when diffusion models rely on fixed, global schedules between
+          domains. CDTSDE embeds domain-shift dynamics directly into the generative process by predicting a spatially
+          varying mixing field at each reverse step and injecting an explicit target-consistent restoration term into
+          the drift. This keeps updates on-manifold, reduces semantic drift, and enables accurate sampling with fewer
+          denoising steps. The method improves structural fidelity and semantic consistency across medical imaging,
+          remote sensing, and electroluminescence semantic mapping tasks.
+        </p>
+      </section>
+
+      <section>
+        <h2>Method Overview</h2>
+        <figure>
+          <img src="../figures/intronew.png" alt="Geometry-aware domain mixture on manifold space" />
+          <figcaption>
+            Fixed vs. geometry-aware domain mixture on manifold space. The spatially varying schedule
+            &Lambda;<sub>t</sub> traces a low-energy path between source and target.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Visual Comparison</h2>
+        <figure>
+          <img src="../figures/QualityTwoRows.png" alt="Qualitative comparison across tasks" />
+          <figcaption>
+            Visual comparison across medical translation (IXI), SAR-to-optical (Sentinel), and semantic mask
+            translation (PSCDE).
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>Additional Results</h2>
+        <div class="grid">
+          <figure>
+            <img src="../figures/AppendixSentil.png" alt="SAR to Optical translation (Sentinel-1/2)" />
+            <figcaption>SAR &rarr; Optical (Sentinel-1/2)</figcaption>
+          </figure>
+          <figure>
+            <img src="../figures/AppendixMedical.png" alt="T1 to T2 MRI translation (IXI)" />
+            <figcaption>T1 &rarr; T2 MRI (IXI)</figcaption>
+          </figure>
+          <figure>
+            <img src="../figures/AppendixMedicalT2toT1.png" alt="T2 to T1 MRI translation (IXI)" />
+            <figcaption>T2 &rarr; T1 MRI (IXI)</figcaption>
+          </figure>
+          <figure>
+            <img src="../figures/AppendixSeg.png" alt="Electroluminescence to semantic mask translation (PSCDE)" />
+            <figcaption>Electroluminescence &rarr; Mask (PSCDE)</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section>
+        <h2>Resources</h2>
+        <ul>
+          <li>Code and training instructions are in <code>README.md</code>.</li>
+          <li>Figures are located in <code>figures/</code>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>BibTeX</h2>
+        <pre class="bibtex"><code>@inproceedings{
+  title={Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation},
+  author={Zihao Wang and Yuzhou Chen and Shaogang Ren},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://openreview.net/forum?id=it0GTdiW9t}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>CDTSDE project page. Built for GitHub Pages.</p>
+      </div>
+    </footer>
+  </body>
+</html>

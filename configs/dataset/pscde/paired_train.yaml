@@ -1,0 +1,15 @@
+dataset:
+  target: dataset.paired_dataset.PairedDataset
+  params:
+    pair_list_path: data/train.txt
+    out_size: 256
+    crop_type: center
+data_loader:
+  batch_size: 4
+  shuffle: true
+  num_workers: 4
+  prefetch_factor: 2
+  drop_last: true
+batch_transform:
+  target: dataset.batch_transform_new.PairedBatchTransform
+  params: {}

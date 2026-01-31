@@ -1,0 +1,39 @@
+data:
+  target: dataset.data_module.DataModule
+  params:
+    train_config: configs/dataset/ixi/paired_train_T1toT2.yaml
+    val_config: configs/dataset/ixi/paired_val_T1toT2.yaml
+model:
+  config: configs/model/cldm_v21_dynamic.yaml
+  resume: checkpoints/pretrained.ckpt
+logger:
+  save_dir: logs/
+  name: dynamic
+  version: IXI_T1toT2
+lightning:
+  seed: 231
+  trainer:
+    accelerator: gpu
+    strategy: ddp_find_unused_parameters_true
+    precision: 32
+    devices: [0]
+    default_root_dir:
+    max_steps: 10001
+    val_check_interval: 125
+    log_every_n_steps: 50
+    accumulate_grad_batches: 1
+    enable_model_summary: false
+  callbacks:
+    - target: model.callbacks.ImageLogger
+      params:
+        log_every_n_steps: 500
+        max_images_each_step: 4
+        log_images_kwargs: ~
+    - target: pytorch_lightning.callbacks.ModelSummary
+      params:
+        max_depth: 1
+    - target: model.callbacks.ModelCheckpoint
+      params:
+        every_n_train_steps: 2000
+        save_top_k: -1
+        filename: "{step}"
