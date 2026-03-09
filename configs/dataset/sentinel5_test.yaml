@@ -1,13 +1,13 @@
 dataset:
   target: dataset.paired_dataset.PairedDataset
   params:
-    pair_list_path: data/test.txt
+    pair_list_path: Sentinel5/sentinel5_pairs.txt
     out_size: 256
     crop_type: center
 data_loader:
-  batch_size: 8
+  batch_size: 4
   shuffle: false
-  num_workers: 16
+  num_workers: 4
   prefetch_factor: 2
   drop_last: false
 batch_transform:

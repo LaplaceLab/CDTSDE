@@ -1,1 +1,6 @@
 iclr2026_conference.tex
+results/
+pretrain_weights/
+__pycache__/
+*.pyc
+*.pyo
