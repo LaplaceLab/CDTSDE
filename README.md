@@ -57,6 +57,11 @@ Cross-modal image translation is brittle when diffusion models rely on fixed, gl
 ![T1 to T2 MRI translation (IXI)](figures/AppendixMedical.png)
 ![Electroluminescence to semantic mask translation (PSCDE)](figures/AppendixSeg.png)
 
+
+We provide the solar defect identification pretrained model here:
+
+(https://zenodo.org/records/18927212?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImQ5YWNmNjFkLTcyZjEtNDVhNC04NjZiLTFhMjg1MjU5YTBiYyIsImRhdGEiOnt9LCJyYW5kb20iOiI4N2I1OGRiNTMxNzA1NzE0ZjA4Zjc1NzUwYjg2NTFmZSJ9.w6TsY9Y177zoc4LjDOd6uSBdALxHiDsw2p8AQl1yMVY9M0m4MR9iHVGAl5HumYZdnQa8wUtkVvPTxVrqtxHhmw)
+
 ### Acknowledgement
 This code is based on the structures from DiffBIR, DoSSR, ControlNet and BasicSR. Thanks for their awesome work.
 
